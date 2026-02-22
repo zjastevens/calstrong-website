@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camps & Events | California Strong Athletics</title>
+<meta name="description" content="Gymnastics camps, Parents Night Out, Open Gym, and special events at California Strong in Concord, CA. Sign up today!">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#111;--dark2:#181818;--green:#2d8c3c;--green-bright:#3aab4a;--green-dark:#1e6b2a;--green-glow:rgba(45,140,60,.15);--white:#f0f0f0;--gray:#888;--gray-light:#bbb;--gray-dark:#444}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.7}
+
+/* Navigation */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0);backdrop-filter:blur(0px);border-bottom:1px solid transparent;transition:all .4s}
+.nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);border-bottom-color:rgba(45,140,60,.1)}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;color:var(--white);line-height:1.1}
+.nav-logo-text span{color:var(--green-bright);font-size:.7rem;letter-spacing:2px;display:block}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .25s;position:relative}
+.nav-links a:hover{color:var(--white)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--green);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--green)!important;color:white!important;padding:10px 22px;border-radius:8px;font-weight:700!important;transition:all .25s!important}
+.nav-cta:hover{background:var(--green-bright)!important;transform:translateY(-1px)}
+.nav-cta::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px}
+
+/* Hero */
+.hero{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;padding:140px 40px 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(45,140,60,.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 30%,rgba(45,140,60,.05) 0%,transparent 50%),linear-gradient(180deg,var(--black),#0d120d,var(--black))}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:900px}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,8vw,5rem);letter-spacing:6px;line-height:1;margin-bottom:20px}
+.hero h1 .green{color:var(--green-bright)}
+.hero-subtitle{font-size:1.15rem;color:var(--gray);max-width:700px;margin:0 auto 30px;line-height:1.7}
+.btn{padding:16px 36px;border-radius:12px;font-family:'Barlow',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:all .3s;display:inline-flex;align-items:center;gap:10px}
+.btn-primary{background:var(--green);color:white;box-shadow:0 4px 20px rgba(45,140,60,.3)}
+.btn-primary:hover{background:var(--green-bright);transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,140,60,.4)}
+
+/* Section */
+section{padding:80px 40px}
+
+/* Event Cards */
+.events-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;max-width:1000px;margin:0 auto}
+.event-card{background:var(--dark2);border:1px solid rgba(255,255,255,.05);border-radius:20px;padding:40px;transition:all .4s}
+.event-card:hover{transform:translateY(-6px);border-color:rgba(45,140,60,.3);box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.event-icon{font-size:3rem;margin-bottom:16px;display:block}
+.event-name{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:3px;margin-bottom:12px;color:var(--white)}
+.event-tagline{font-size:.95rem;color:var(--green-bright);margin-bottom:16px;font-weight:600}
+.event-description{color:var(--gray-light);font-size:.95rem;line-height:1.7;margin-bottom:20px}
+.event-info{margin-bottom:20px}
+.event-info p{font-size:.9rem;color:var(--gray);margin-bottom:6px}
+.event-info strong{color:var(--green-bright)}
+.event-btn{display:inline-block;padding:12px 28px;background:var(--green);color:white;text-align:center;text-decoration:none;border-radius:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:.85rem;transition:all .3s}
+.event-btn:hover{background:var(--green-bright);transform:translateY(-2px)}
+
+/* Camps */
+.camps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto}
+.camp-card{background:var(--dark2);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:30px;text-align:center;transition:all .3s}
+.camp-card:hover{border-color:rgba(45,140,60,.2);transform:translateY(-4px)}
+.camp-icon{font-size:2.5rem;margin-bottom:12px}
+.camp-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px;margin-bottom:12px;color:var(--green-bright)}
+.camp-card p{color:var(--gray);font-size:.9rem;line-height:1.6}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--dark),#0d1d0d);padding:80px 40px;text-align:center}
+.cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:3px;margin-bottom:20px}
+.cta-section p{font-size:1.1rem;color:var(--gray-light);margin-bottom:30px;line-height:1.7;max-width:600px;margin-left:auto;margin-right:auto}
+
+/* Footer */
+.footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,.04);padding:60px 40px 30px}
+.footer-content{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand{display:flex;align-items:center;gap:12px}
+.footer-brand-name{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px}
+.footer-brand-desc{color:var(--gray);font-size:.88rem;line-height:1.6;margin-top:16px}
+.footer-col h4{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;margin-bottom:16px;color:var(--green-bright)}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col a{color:var(--gray);text-decoration:none;font-size:.88rem;transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.contact-info p{color:var(--gray);font-size:.88rem;margin-bottom:8px}
+.contact-info a{color:var(--green-bright);text-decoration:none;transition:color .2s}
+.contact-info a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.04);padding-top:24px;text-align:center;color:var(--gray-dark);font-size:.8rem}
+
+@media(max-width:968px){
+.events-grid{grid-template-columns:1fr}
+.camps-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr}
+.nav-links{display:none}
+.hamburger{display:flex}
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="mainNav">
+<a href="../index.html" class="nav-logo">
+<img src="../images/logo.png" alt="California Strong Athletics Logo" style="width: 70px; height: auto;">
+<div class="nav-logo-text">CAL STRONG<span>ATHLETICS</span></div>
+</a>
+<ul class="nav-links" id="navMenu">
+<li><a href="../index.html">Home</a></li>
+<li><a href="birthday-parties.html">Birthday Parties</a></li>
+<li><a href="camps-events.html">Camps & Events</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="https://app.iclasspro.com/portal?c=californiastrongathletics" target="_blank" class="nav-cta">Customer Portal</a></li>
+</ul>
+<button class="hamburger" id="mobileMenuToggle" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<h1>CAMPS & <span class="green">EVENTS</span></h1>
+<p class="hero-subtitle">
+From summer camps to Parents Night Out, we offer fun events throughout the year!
+</p>
+<a href="#open-gym-booking" class="btn btn-primary">Book Open Gym</a>
+</div>
+</section>
+
+<!-- Events -->
+<section style="background:var(--black)">
+<div class="events-grid">
+
+<!-- Open Gym -->
+<div class="event-card">
+<span class="event-icon">🤸</span>
+<div class="event-name">OPEN GYM</div>
+<div class="event-tagline">First & Last Saturday Every Month</div>
+<p class="event-description">
+Open access to all equipment! Practice skills, try new apparatus, or just have fun in a supervised environment.
+</p>
+<div class="event-info">
+<p><strong>When:</strong> First & Last Sat, 6:30-8 PM</p>
+<p><strong>Cost:</strong> $15 per child</p>
+<p><strong>Ages:</strong> All ages welcome</p>
+</div>
+<a href="#open-gym-booking" class="event-btn">Check Schedule</a>
+</div>
+
+<!-- Parents Night Out -->
+<div class="event-card">
+<span class="event-icon">🌙</span>
+<div class="event-name">PARENTS NIGHT OUT</div>
+<div class="event-tagline">Select Fridays</div>
+<p class="event-description">
+Date night! Drop the kids off for 3.5 hours of supervised fun. Pizza, games, and gym time included.
+</p>
+<div class="event-info">
+<p><strong>When:</strong> Select Fridays, 5:30-9 PM</p>
+<p><strong>Cost:</strong> $35 per child</p>
+<p><strong>Ages:</strong> 4-12 years old</p>
+</div>
+<a href="#pno-booking" class="event-btn">Sign Up</a>
+</div>
+
+</div>
+</section>
+
+<!-- Open Gym Booking -->
+<section id="open-gym-booking" style="background:var(--dark);padding:80px 40px">
+<div style="max-width:1200px;margin:0 auto">
+<h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:3px;text-align:center;margin-bottom:30px">BOOK <span style="color:var(--green-bright)">OPEN GYM</span></h2>
+<p style="text-align:center;color:var(--gray);font-size:1.05rem;max-width:600px;margin:0 auto 40px">
+Select a date below to register for Open Gym. Drop-in welcome!
+</p>
+<div style="background:var(--dark2);border-radius:16px;overflow:hidden;border:1px solid rgba(45,140,60,.15)">
+<iframe 
+    src="https://portal.iclasspro.com/csagymnastics/camps/4?sortBy=time" 
+    width="100%" 
+    height="700" 
+    frameborder="0" 
+    style="border:none;display:block">
+</iframe>
+</div>
+</div>
+</section>
+
+<!-- Parents Night Out Booking -->
+<section id="pno-booking" style="background:var(--black);padding:80px 40px">
+<div style="max-width:1200px;margin:0 auto">
+<h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:3px;text-align:center;margin-bottom:30px">BOOK <span style="color:var(--green-bright)">PARENTS NIGHT OUT</span></h2>
+<p style="text-align:center;color:var(--gray);font-size:1.05rem;max-width:600px;margin:0 auto 40px">
+Choose a date and drop the kids off for a fun evening!
+</p>
+<div style="background:var(--dark2);border-radius:16px;overflow:hidden;border:1px solid rgba(45,140,60,.15)">
+<iframe 
+    src="https://portal.iclasspro.com/csagymnastics/camps/2?sortBy=time" 
+    width="100%" 
+    height="700" 
+    frameborder="0" 
+    style="border:none;display:block">
+</iframe>
+</div>
+</div>
+</section>
+
+<!-- Camps -->
+<section style="background:var(--dark)">
+<div style="text-align:center;margin-bottom:50px">
+<h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:3px;margin-bottom:20px">SCHOOL BREAK <span style="color:var(--green-bright)">CAMPS</span></h2>
+<p style="color:var(--gray);font-size:1.05rem;max-width:700px;margin:0 auto">
+Full-day camps during school breaks. Kids learn skills, make friends, and stay active!
+</p>
+</div>
+
+<div class="camps-grid">
+
+<div class="camp-card">
+<div class="camp-icon">☀️</div>
+<h3>Summer Camps</h3>
+<p>All-day action-packed weeks throughout June, July, and August.</p>
+</div>
+
+<div class="camp-card">
+<div class="camp-icon">🌸</div>
+<h3>Spring Break Camp</h3>
+<p>Full-week camp with gymnastics training, games, and challenges.</p>
+</div>
+
+<div class="camp-card">
+<div class="camp-icon">❄️</div>
+<h3>Winter Break Camp</h3>
+<p>Holiday-themed camp days with gymnastics, crafts, and fun.</p>
+</div>
+
+</div>
+
+<div style="max-width:700px;margin:50px auto 0;background:var(--dark2);border:1px solid rgba(45,140,60,.15);border-radius:16px;padding:32px;text-align:center">
+<h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:2px;margin-bottom:20px;color:var(--green-bright)">Typical Camp Details</h3>
+<div style="text-align:left;color:var(--gray-light);font-size:.95rem;line-height:1.8">
+<p><strong style="color:var(--green-bright)">Time:</strong> 9 AM - 3 PM (extended care available)</p>
+<p><strong style="color:var(--green-bright)">Ages:</strong> 5-12 years old</p>
+<p><strong style="color:var(--green-bright)">Cost:</strong> $60-75 per day</p>
+<p><strong style="color:var(--green-bright)">Includes:</strong> Gymnastics skills, games, obstacle courses, crafts</p>
+</div>
+<p style="color:var(--gray);margin-top:20px;font-size:.9rem">Camps announced 4-6 weeks in advance. Sign up early!</p>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<h2>NEED HELP <span style="color:var(--green-bright)">BOOKING?</span></h2>
+<p>
+Questions about camps or events? Give us a call!
+</p>
+<a href="tel:+19258265690" class="btn btn-primary">Call (925) 826-5690</a>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-grid">
+<div>
+<div class="footer-brand">
+<img src="../images/logo.png" alt="Cal Strong Logo" style="width: 50px; height: auto;">
+<div class="footer-brand-name">CAL STRONG</div>
+</div>
+<p class="footer-brand-desc">
+Where champions are built, one skill at a time. Serving the Concord community with expert gymnastics training.
+</p>
+</div>
+
+<div class="footer-col">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="about.html">About Us</a></li>
+<li><a href="birthday-parties.html">Birthday Parties</a></li>
+<li><a href="camps-events.html">Camps & Events</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="https://portal.iclasspro.com/csagymnastics">Start Trial</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>Programs</h4>
+<ul>
+<li><a href="kinder-gym.html">Kinder Gym</a></li>
+<li><a href="boys-rec.html">Boys Rec</a></li>
+<li><a href="girls-rec.html">Girls Rec</a></li>
+<li><a href="tumbling.html">Tumbling</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>Contact</h4>
+<div class="contact-info">
+<p><strong>Address:</strong></p>
+<p>2231 Commerce Ave, Suite F<br>Concord, CA 94520</p>
+<p style="margin-top:12px"><strong>Phone:</strong></p>
+<p><a href="tel:+19258265690">(925) 826-5690</a></p>
+<p style="margin-top:12px"><strong>Email:</strong></p>
+<p><a href="mailto:info@californiastrongathletics.com">info@californiastrongathletics.com</a></p>
+</div>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>&copy; 2025 California Strong Athletics. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if (window.pageYOffset > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+
+document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+    document.getElementById('navMenu').classList.toggle('active');
+    this.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>

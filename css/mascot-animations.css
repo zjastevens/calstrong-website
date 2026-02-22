@@ -1,0 +1,120 @@
+/* California Strong Athletics - Mascot Gymnastics Animations */
+
+.mascot-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.mascot {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    animation: gymnastics-routine 20s infinite;
+    transform-origin: bottom center;
+}
+
+/* Gymnastics Routine - Cycles through different moves */
+@keyframes gymnastics-routine {
+    /* Start: Standing */
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scaleX(1);
+    }
+    
+    /* Cartwheel */
+    5% {
+        transform: translateY(-30px) rotate(90deg) scaleX(1);
+    }
+    10% {
+        transform: translateY(-20px) rotate(180deg) scaleX(1);
+    }
+    15% {
+        transform: translateY(-30px) rotate(270deg) scaleX(1);
+    }
+    20% {
+        transform: translateY(0) rotate(360deg) scaleX(1);
+    }
+    
+    /* Pause */
+    20%, 25% {
+        transform: translateY(0) rotate(0deg) scaleX(1);
+    }
+    
+    /* Handstand */
+    30% {
+        transform: translateY(-20px) rotate(180deg) scaleX(1);
+    }
+    35%, 40% {
+        transform: translateY(-20px) rotate(180deg) scaleX(1);
+    }
+    45% {
+        transform: translateY(0) rotate(360deg) scaleX(1);
+    }
+    
+    /* Pause */
+    45%, 50% {
+        transform: translateY(0) rotate(0deg) scaleX(1);
+    }
+    
+    /* Backflip */
+    55% {
+        transform: translateY(-50px) rotate(-90deg) scaleX(1);
+    }
+    60% {
+        transform: translateY(-80px) rotate(-180deg) scaleX(1);
+    }
+    65% {
+        transform: translateY(-50px) rotate(-270deg) scaleX(1);
+    }
+    70% {
+        transform: translateY(0) rotate(-360deg) scaleX(1);
+    }
+    
+    /* Pause */
+    70%, 75% {
+        transform: translateY(0) rotate(0deg) scaleX(1);
+    }
+    
+    /* Side flip */
+    80% {
+        transform: translateY(-40px) rotate(180deg) scaleX(-1);
+    }
+    85% {
+        transform: translateY(0) rotate(360deg) scaleX(1);
+    }
+    
+    /* Final pause */
+    85%, 100% {
+        transform: translateY(0) rotate(0deg) scaleX(1);
+    }
+}
+
+/* Idle breathing animation when not doing tricks */
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.02) translateY(-3px);
+    }
+}
+
+/* Mobile - smaller mascot */
+@media (max-width: 768px) {
+    .mascot-container {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Optional: Hover to pause animation */
+.mascot-container:hover .mascot {
+    animation-play-state: paused;
+}

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Parties | California Strong Athletics</title>
+<meta name="description" content="Unforgettable birthday parties at California Strong! Kids flip, jump, and play on professional gymnastics equipment. Book your party today in Concord, CA.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#111;--dark2:#181818;--green:#2d8c3c;--green-bright:#3aab4a;--green-dark:#1e6b2a;--green-glow:rgba(45,140,60,.15);--white:#f0f0f0;--gray:#888;--gray-light:#bbb;--gray-dark:#444}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.7}
+
+/* Navigation */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0);backdrop-filter:blur(0px);border-bottom:1px solid transparent;transition:all .4s}
+.nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);border-bottom-color:rgba(45,140,60,.1)}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;color:var(--white);line-height:1.1}
+.nav-logo-text span{color:var(--green-bright);font-size:.7rem;letter-spacing:2px;display:block}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .25s;position:relative}
+.nav-links a:hover{color:var(--white)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--green);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--green)!important;color:white!important;padding:10px 22px;border-radius:8px;font-weight:700!important;transition:all .25s!important}
+.nav-cta:hover{background:var(--green-bright)!important;transform:translateY(-1px)}
+.nav-cta::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px}
+
+/* Hero */
+.hero{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;padding:140px 40px 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(45,140,60,.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 30%,rgba(45,140,60,.05) 0%,transparent 50%),linear-gradient(180deg,var(--black),#0d120d,var(--black))}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:900px}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,8vw,5rem);letter-spacing:6px;line-height:1;margin-bottom:20px}
+.hero h1 .green{color:var(--green-bright)}
+.hero-subtitle{font-size:1.15rem;color:var(--gray);max-width:700px;margin:0 auto 30px;line-height:1.7}
+.btn{padding:16px 36px;border-radius:12px;font-family:'Barlow',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:all .3s;display:inline-flex;align-items:center;gap:10px}
+.btn-primary{background:var(--green);color:white;box-shadow:0 4px 20px rgba(45,140,60,.3)}
+.btn-primary:hover{background:var(--green-bright);transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,140,60,.4)}
+
+/* Section */
+section{padding:80px 40px}
+
+/* Packages */
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;max-width:1200px;margin:0 auto}
+.package-card{background:var(--dark2);border:1px solid rgba(255,255,255,.05);border-radius:20px;padding:36px 28px;transition:all .4s;position:relative;text-align:center}
+.package-card:hover{transform:translateY(-8px);border-color:rgba(45,140,60,.3);box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.package-card.popular{border:2px solid var(--green);background:linear-gradient(135deg,rgba(45,140,60,.08),var(--dark2))}
+.package-name{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:3px;margin-bottom:12px;color:var(--white)}
+.package-icon{font-size:3rem;margin-bottom:16px;display:block}
+.package-price{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--green-bright);line-height:1;margin:16px 0}
+.package-kids{font-size:.9rem;color:var(--gray);margin-bottom:20px}
+.package-features{list-style:none;margin-bottom:28px;text-align:left}
+.package-features li{padding:8px 0;font-size:.9rem;color:var(--gray-light);display:flex;align-items:center;gap:10px}
+.package-features li::before{content:'✓';color:var(--green-bright);font-weight:700;font-size:1.1rem;flex-shrink:0}
+.package-btn{display:block;width:100%;padding:14px;background:var(--green);border:none;color:var(--white);text-align:center;text-decoration:none;border-radius:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:.85rem;transition:all .3s}
+.package-btn:hover{background:var(--green-bright);transform:translateY(-2px)}
+
+/* Simple Info */
+.simple-info{background:var(--dark);max-width:900px;margin:60px auto 0;padding:40px;border-radius:20px;border:1px solid rgba(45,140,60,.15)}
+.simple-info h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px;margin-bottom:20px;color:var(--green-bright);text-align:center}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.info-item{display:flex;gap:12px}
+.info-item strong{color:var(--green-bright);min-width:120px;flex-shrink:0}
+.info-item p{color:var(--gray-light);font-size:.95rem}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--dark),#0d1d0d);padding:80px 40px;text-align:center}
+.cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:3px;margin-bottom:20px}
+.cta-section p{font-size:1.1rem;color:var(--gray-light);margin-bottom:30px;line-height:1.7;max-width:600px;margin-left:auto;margin-right:auto}
+
+/* Footer */
+.footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,.04);padding:60px 40px 30px}
+.footer-content{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand{display:flex;align-items:center;gap:12px}
+.footer-brand-name{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px}
+.footer-brand-desc{color:var(--gray);font-size:.88rem;line-height:1.6;margin-top:16px}
+.footer-col h4{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;margin-bottom:16px;color:var(--green-bright)}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col a{color:var(--gray);text-decoration:none;font-size:.88rem;transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.contact-info p{color:var(--gray);font-size:.88rem;margin-bottom:8px}
+.contact-info a{color:var(--green-bright);text-decoration:none;transition:color .2s}
+.contact-info a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.04);padding-top:24px;text-align:center;color:var(--gray-dark);font-size:.8rem}
+
+@media(max-width:968px){
+.packages-grid{grid-template-columns:1fr;max-width:500px}
+.info-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr}
+.nav-links{display:none}
+.hamburger{display:flex}
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="mainNav">
+<a href="../index.html" class="nav-logo">
+<img src="../images/logo.png" alt="California Strong Athletics Logo" style="width: 70px; height: auto;">
+<div class="nav-logo-text">CAL STRONG<span>ATHLETICS</span></div>
+</a>
+<ul class="nav-links" id="navMenu">
+<li><a href="../index.html">Home</a></li>
+<li><a href="birthday-parties.html">Birthday Parties</a></li>
+<li><a href="camps-events.html">Camps & Events</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="https://app.iclasspro.com/portal?c=californiastrongathletics" target="_blank" class="nav-cta">Customer Portal</a></li>
+</ul>
+<button class="hamburger" id="mobileMenuToggle" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<h1>BIRTHDAY PARTIES AT <span class="green">CAL STRONG</span></h1>
+<p class="hero-subtitle">
+Professional gym equipment, expert supervision, and unforgettable fun. The perfect birthday party!
+</p>
+<a href="#booking" class="btn btn-primary">Book Your Party</a>
+</div>
+</section>
+
+<!-- Packages -->
+<section style="background:var(--black)">
+<div class="packages-grid">
+
+<!-- Ninja Plus -->
+<div class="package-card">
+<span class="package-icon">🎉</span>
+<div class="package-name">NINJA PLUS</div>
+<div class="package-price">$399</div>
+<div class="package-kids">Up to 10 kids</div>
+<ul class="package-features">
+<li>1 hour gym time</li>
+<li>30 min party room</li>
+<li>1 party host</li>
+<li>Tables & chairs</li>
+</ul>
+<a href="#booking" class="package-btn">Book Now</a>
+</div>
+
+<!-- Ninja Gold -->
+<div class="package-card popular">
+<span class="package-icon">⭐</span>
+<div class="package-name">NINJA GOLD</div>
+<div class="package-price">$499</div>
+<div class="package-kids">Up to 15 kids</div>
+<ul class="package-features">
+<li>1 hour gym time</li>
+<li>30 min party room</li>
+<li>2 party hosts</li>
+<li>Tables & chairs</li>
+<li>Priority booking</li>
+</ul>
+<a href="#booking" class="package-btn">Book Now</a>
+</div>
+
+<!-- Ninja Extreme -->
+<div class="package-card">
+<span class="package-icon">🏆</span>
+<div class="package-name">NINJA EXTREME</div>
+<div class="package-price">$599</div>
+<div class="package-kids">Up to 20 kids</div>
+<ul class="package-features">
+<li>1 hour gym time</li>
+<li>30 min party room</li>
+<li>2 party hosts</li>
+<li>Tables & chairs</li>
+<li>Priority booking</li>
+<li>Party perks</li>
+</ul>
+<a href="#booking" class="package-btn">Book Now</a>
+</div>
+
+</div>
+
+<!-- Simple Info Box -->
+<div class="simple-info">
+<h3>Party Details</h3>
+<div class="info-grid">
+<div class="info-item">
+<strong>What we provide:</strong>
+<p>Gym equipment, hosts, tables, chairs, setup/cleanup</p>
+</div>
+<div class="info-item">
+<strong>What you bring:</strong>
+<p>Food, cake, decorations, plates, napkins, cups</p>
+</div>
+<div class="info-item">
+<strong>Duration:</strong>
+<p>1.5 hours total (1 hr gym + 30 min party room)</p>
+</div>
+<div class="info-item">
+<strong>Ages:</strong>
+<p>Perfect for ages 2.5–14</p>
+</div>
+<div class="info-item">
+<strong>Add-ons:</strong>
+<p>Extra time +$75, Extra host +$75, Bounce house +$100</p>
+</div>
+<div class="info-item">
+<strong>Extra kids:</strong>
+<p>$20 per additional child</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Booking Form -->
+<section id="booking" style="background:var(--dark);padding:80px 40px">
+<div style="max-width:1200px;margin:0 auto">
+<h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:3px;text-align:center;margin-bottom:30px">BOOK YOUR <span style="color:var(--green-bright)">PARTY</span></h2>
+<p style="text-align:center;color:var(--gray);font-size:1.05rem;max-width:600px;margin:0 auto 40px">
+Select your date and party package below. Dates fill fast—especially weekends!
+</p>
+<div style="background:var(--dark2);border-radius:16px;overflow:hidden;border:1px solid rgba(45,140,60,.15)">
+<iframe 
+    src="https://portal.iclasspro.com/csagymnastics/party-booking-01-date" 
+    width="100%" 
+    height="900" 
+    frameborder="0" 
+    style="border:none;display:block">
+</iframe>
+</div>
+<p style="text-align:center;color:var(--gray);margin-top:30px;font-size:.95rem">
+Need help? Call us at <a href="tel:+19258265690" style="color:var(--green-bright);text-decoration:none;font-weight:600">(925) 826-5690</a>
+</p>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-grid">
+<div>
+<div class="footer-brand">
+<img src="../images/logo.png" alt="Cal Strong Logo" style="width: 50px; height: auto;">
+<div class="footer-brand-name">CAL STRONG</div>
+</div>
+<p class="footer-brand-desc">
+Where champions are built, one skill at a time. Serving the Concord community with expert gymnastics training.
+</p>
+</div>
+
+<div class="footer-col">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="about.html">About Us</a></li>
+<li><a href="birthday-parties.html">Birthday Parties</a></li>
+<li><a href="camps-events.html">Camps & Events</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="https://portal.iclasspro.com/csagymnastics">Start Trial</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>Programs</h4>
+<ul>
+<li><a href="kinder-gym.html">Kinder Gym</a></li>
+<li><a href="boys-rec.html">Boys Rec</a></li>
+<li><a href="girls-rec.html">Girls Rec</a></li>
+<li><a href="tumbling.html">Tumbling</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>Contact</h4>
+<div class="contact-info">
+<p><strong>Address:</strong></p>
+<p>2231 Commerce Ave, Suite F<br>Concord, CA 94520</p>
+<p style="margin-top:12px"><strong>Phone:</strong></p>
+<p><a href="tel:+19258265690">(925) 826-5690</a></p>
+<p style="margin-top:12px"><strong>Email:</strong></p>
+<p><a href="mailto:info@californiastrongathletics.com">info@californiastrongathletics.com</a></p>
+</div>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>&copy; 2025 California Strong Athletics. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if (window.pageYOffset > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+
+document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+    document.getElementById('navMenu').classList.toggle('active');
+    this.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>

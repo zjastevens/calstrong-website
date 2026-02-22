@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Gymnastics is the Foundation for All Sports | Cal Strong Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#111;--dark2:#181818;--green:#2d8c3c;--green-bright:#3aab4a;--green-dark:#1e6b2a;--green-glow:rgba(45,140,60,.15);--white:#f0f0f0;--gray:#888;--gray-light:#bbb;--gray-dark:#444}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.8}
+.reveal{opacity:0;transform:translateY(60px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* Navigation */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0);backdrop-filter:blur(0px);border-bottom:1px solid transparent;transition:all .4s}
+.nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);border-bottom-color:rgba(45,140,60,.1)}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logo svg{width:40px;height:40px}
+.nav-logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;color:var(--white);line-height:1.1}
+.nav-logo-text span{color:var(--green-bright);font-size:.7rem;letter-spacing:2px;display:block}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .25s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--green);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.dropdown{position:relative}
+.dropdown-menu{position:absolute;top:100%;left:0;background:var(--dark);border:1px solid rgba(45,140,60,.2);border-radius:8px;padding:12px 0;min-width:200px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s;list-style:none;margin-top:10px}
+.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown-menu li{padding:0}
+.dropdown-menu a{display:block;padding:10px 20px;font-size:.8rem;letter-spacing:1px;color:var(--gray)}
+.dropdown-menu a:hover{color:var(--green-bright);background:rgba(45,140,60,.05)}
+.dropdown-menu a::after{display:none}
+.nav-cta{background:var(--green)!important;color:white!important;padding:10px 22px;border-radius:8px;font-weight:700!important;transition:all .25s!important}
+.nav-cta:hover{background:var(--green-bright)!important;transform:translateY(-1px)}
+.nav-cta::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px}
+
+/* Container & Sections */
+.container{max-width:800px;margin:0 auto;padding:0 40px}
+section{padding:80px 40px}
+
+/* Article Header */
+.article-header{padding:140px 40px 60px;text-align:center;background:linear-gradient(180deg,var(--black),var(--dark))}
+.article-header h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,4rem);letter-spacing:4px;line-height:1.1;margin-bottom:24px}
+.article-meta{display:flex;gap:24px;justify-content:center;font-size:.9rem;color:var(--gray);flex-wrap:wrap}
+.article-meta span{display:flex;align-items:center;gap:8px}
+
+/* Article Content */
+.article-content{background:var(--dark);padding:60px 0}
+.article-body{max-width:800px;margin:0 auto;padding:0 40px}
+.lead{font-size:1.25rem;color:var(--gray-light);line-height:1.9;margin-bottom:32px;font-weight:500}
+.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:3px;margin:48px 0 20px;color:var(--white)}
+.article-body h3{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:2px;margin:36px 0 16px;color:var(--green-bright)}
+.article-body p{color:var(--gray-light);font-size:1.05rem;line-height:1.9;margin-bottom:24px}
+.article-body strong{color:var(--white)}
+
+/* CTA Box */
+.cta-box-inline{background:linear-gradient(135deg,#1e6b2a,#2d8c3c);padding:50px;border-radius:20px;text-align:center;margin:60px 0;color:white}
+.cta-box-inline h3{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:3px;margin-bottom:16px;color:white}
+.cta-box-inline p{font-size:1.1rem;margin-bottom:30px;opacity:.95}
+.btn{padding:16px 36px;border-radius:12px;font-family:'Barlow',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:all .3s;display:inline-flex;align-items:center;gap:10px}
+.btn-primary{background:white;color:var(--green-dark);box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.btn-primary:hover{background:var(--white);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+
+/* Related Articles */
+.related-articles{background:var(--dark2);padding:60px 40px}
+.related-articles h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:3px;text-align:center;margin-bottom:40px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+.related-card{background:var(--dark);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:30px;transition:all .3s}
+.related-card:hover{border-color:rgba(45,140,60,.2);transform:translateY(-4px)}
+.related-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px;margin-bottom:12px}
+.related-card p{color:var(--gray);font-size:.9rem;line-height:1.6}
+
+/* Footer */
+.footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,.04);padding:60px 40px 30px}
+.footer-content{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-brand svg{width:32px;height:32px}
+.footer-brand-name{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px}
+.footer-brand-desc{color:var(--gray);font-size:.88rem;line-height:1.6}
+.footer-col h4{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;margin-bottom:16px;color:var(--green-bright)}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col a{color:var(--gray);text-decoration:none;font-size:.88rem;transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.contact-info p{color:var(--gray);font-size:.88rem;margin-bottom:8px}
+.contact-info a{color:var(--green-bright);text-decoration:none;transition:color .2s}
+.contact-info a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.04);padding-top:24px;text-align:center;color:var(--gray-dark);font-size:.8rem}
+
+@media(max-width:900px){
+.nav-links{display:none}.hamburger{display:flex}
+.related-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr}
+section{padding:70px 24px}.nav{padding:0 20px}.container{padding:0 24px}
+.article-body{padding:0 24px}
+}
+@media(max-width:480px){
+.article-header{padding:100px 20px 40px}
+.article-header h1{font-size:2.2rem}
+}
+</style>
+</head>
+<body>
+<!-- SVG Icons -->
+<svg style="display:none">
+<symbol id="bear" viewBox="0 0 100 100">
+<circle cx="22" cy="22" r="16" fill="#2a1a0a"/>
+<circle cx="22" cy="22" r="9" fill="#4a3018"/>
+<circle cx="78" cy="22" r="16" fill="#2a1a0a"/>
+<circle cx="78" cy="22" r="9" fill="#4a3018"/>
+<ellipse cx="50" cy="52" rx="38" ry="40" fill="#3b2212"/>
+<ellipse cx="50" cy="54" rx="34" ry="36" fill="#4a2a14"/>
+<ellipse cx="50" cy="64" rx="18" ry="16" fill="#c8a04a"/>
+<ellipse cx="50" cy="62" rx="15" ry="13" fill="#d4aa50"/>
+<rect x="68" y="32" width="16" height="4.5" rx="2" fill="#2a1a08" transform="rotate(8,76,34)"/>
+<rect x="16" y="32" width="16" height="4.5" rx="2" fill="#2a1a08" transform="rotate(-8,24,34)"/>
+<ellipse cx="36" cy="44" rx="6" ry="7" fill="white"/>
+<ellipse cx="64" cy="44" rx="6" ry="7" fill="white"/>
+<circle cx="37" cy="44" r="4" fill="#1a8a2a"/>
+<circle cx="65" cy="44" r="4" fill="#1a8a2a"/>
+<circle cx="37" cy="45" r="2" fill="#082a0c"/>
+<circle cx="65" cy="45" r="2" fill="#082a0c"/>
+<circle cx="35" cy="42" r="1.8" fill="white" opacity=".9"/>
+<circle cx="63" cy="42" r="1.8" fill="white" opacity=".9"/>
+<ellipse cx="50" cy="58" rx="7" ry="5.5" fill="#111"/>
+<path d="M40 68 Q45 76 50 71 Q55 76 60 68" stroke="#2a1808" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<rect x="45" y="68" width="10" height="5" rx="1.5" fill="white"/>
+</symbol>
+</svg>
+
+<!-- Navigation -->
+<nav class="nav" id="mainNav">
+<a href="../index.html" class="nav-logo">
+<img src="../images/logo.png" alt="Cal Strong Logo" style="width: 70px; height: auto;">
+<div class="nav-logo-text">CAL STRONG<span>ATHLETICS</span></div>
+</a>
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+<li class="dropdown">
+<a href="programs-dark.html">Programs</a>
+<ul class="dropdown-menu">
+<li><a href="kinder-gym.html">Kinder Gym</a></li>
+<li><a href="boys-rec.html">Boys Rec</a></li>
+<li><a href="girls-rec.html">Girls Rec</a></li>
+<li><a href="tumbling.html">Tumbling</a></li>
+</ul>
+</li>
+<li><a href="about-dark.html">About</a></li>
+<li><a href="coaches-dark.html">Coaches</a></li>
+<li><a href="contact-dark.html">Contact</a></li>
+<li><a href="https://app.iclasspro.com/portal?c=californiastrongathletics" target="_blank" class="nav-cta">Customer Portal</a></li>
+</ul>
+<button class="hamburger" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</nav>
+
+<!-- Article Header -->
+<header class="article-header">
+<h1>Why Gymnastics is the Foundation for All Sports</h1>
+<div class="article-meta">
+<span>📅 February 2026</span>
+<span>👤 Zach Stevens, Founder</span>
+<span>⏱️ 10 min read</span>
+</div>
+</header>
+
+<!-- Article Content -->
+<section class="article-content">
+<div class="article-body reveal">
+<p class="lead">Ask any elite coach—whether they train NFL linebackers, Olympic swimmers, or professional soccer players—what separates good athletes from extraordinary ones, and you'll hear the same answer: body awareness, balance, explosive power, and the ability to control your body through space.</p>
+
+<p>And where do athletes build these foundational skills fastest and most completely? <strong>Gymnastics.</strong></p>
+
+<h2>The Universal Truth Every Coach Knows</h2>
+
+<p>Gymnastics isn't just another youth sport. It's the master skill set—the athletic foundation that every other sport builds upon. It's the DNA of athleticism itself.</p>
+
+<h3>1. Body Awareness (Proprioception)</h3>
+
+<p>Gymnasts learn to know exactly where their body is in space—even upside down, mid-flip, or mid-rotation. This translates directly to every sport requiring coordination and spatial orientation.</p>
+
+<p>Whether it's a football player maintaining balance through a tackle, a basketball player adjusting mid-air for a shot, or a soccer player controlling a difficult pass—body awareness is everything.</p>
+
+<h3>2. Strength-to-Weight Ratio</h3>
+
+<p>Gymnastics builds functional strength—the kind that moves your own body through space efficiently. Core strength, upper body power, leg strength, and grip strength all develop naturally through gymnastics training.</p>
+
+<p>This isn't gym muscles. This is real, usable strength that translates to every athletic movement.</p>
+
+<h3>3. Flexibility & Range of Motion</h3>
+
+<p>Flexible athletes are less prone to injury, able to generate more power, faster to recover, and more agile. Gymnastics systematically develops flexibility in every joint and muscle group.</p>
+
+<p>The dividends pay off for years—whether your child becomes a pitcher, a dancer, or a martial artist.</p>
+
+<h3>4. Mental Toughness</h3>
+
+<p>Learning a back handspring requires courage, patience, focus, and resilience. These mental skills matter more than physical ones in the long run—and gymnastics builds them earlier than almost any other sport.</p>
+
+<p>The child who learns to overcome fear on the balance beam becomes the teenager who doesn't give up when things get hard.</p>
+
+<h2>The Cal Strong Approach</h2>
+
+<p>At California Strong Athletics, we don't just teach gymnastics—we build athletes. Whether your child goes on to compete in gymnastics, excel in another sport, or just becomes the kid who isn't afraid to try new things, gymnastics gives them tools for life.</p>
+
+<p>Our USAG-certified coaches understand that every child is different. Some are natural risk-takers who need guidance and structure. Others are cautious and need encouragement and patience. We meet each athlete exactly where they are.</p>
+
+<p>From our Kinder Gym program for ages 2.5-5.5, where we build foundations through play, to our competitive teams pushing the limits of human performance—every program is designed with the same philosophy: <strong>children first, sports second</strong>.</p>
+
+<h2>The Long-Term Investment</h2>
+
+<p>Gymnastics isn't a shortcut. It's a long-term investment in your child's athletic future. The skills they build here—the strength, flexibility, body control, and mental toughness—will serve them for decades.</p>
+
+<p>Whether they dream of collegiate athletics, professional sports, or just want to stay active and healthy throughout their life, gymnastics gives them the foundation to succeed.</p>
+
+<div class="cta-box-inline reveal">
+<h3>Ready to Build Your Child's Athletic Foundation?</h3>
+<p>Experience the Cal Strong difference. Try us risk-free with our 30-day money-back guarantee.</p>
+<a href="trial-dark.html" class="btn btn-primary">Schedule Free Trial Class</a>
+</div>
+</div>
+</section>
+
+<!-- Related Articles -->
+<section class="related-articles">
+<h2 class="reveal">More From Cal Strong</h2>
+<div class="related-grid">
+<div class="related-card reveal">
+<h3>Coming Soon</h3>
+<p>Check back for more articles on gymnastics, child development, and building champions.</p>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-grid">
+<div>
+<div class="footer-brand">
+<img src="../images/logo.png" alt="Cal Strong Logo" style="width: 50px; height: auto;">
+<div class="footer-brand-name">CAL STRONG</div>
+</div>
+<p class="footer-brand-desc">
+Where champions are built, one skill at a time. Serving the Concord community with expert gymnastics training.
+</p>
+</div>
+
+<div class="footer-col">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="about-dark.html">About Us</a></li>
+<li><a href="programs-dark.html">Programs</a></li>
+<li><a href="contact-dark.html">Contact</a></li>
+<li><a href="trial-dark.html">Start Trial</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>Programs</h4>
+<ul>
+<li><a href="kinder-gym.html">Kinder Gym</a></li>
+<li><a href="boys-rec.html">Boys Rec</a></li>
+<li><a href="girls-rec.html">Girls Rec</a></li>
+<li><a href="tumbling.html">Tumbling</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>Contact</h4>
+<div class="contact-info">
+<p><strong>Address:</strong></p>
+<p>2231 Commerce Ave, Suite F<br>Concord, CA 94520</p>
+<p style="margin-top:12px"><strong>Phone:</strong></p>
+<p><a href="tel:+19258265690">(925) 826-5690</a></p>
+<p style="margin-top:12px"><strong>Email:</strong></p>
+<p><a href="mailto:info@californiastrongathletics.com">info@californiastrongathletics.com</a></p>
+</div>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>&copy; 2025 California Strong Athletics. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Scroll reveal animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+</script>
+
+<!-- Atlas Chatbot -->
+<div id="atlas-toggle" class="atlas-toggle">
+    <img src="../images/atlas/atlas-avatar.png" alt="Atlas the Bear">
+</div>
+
+<div id="atlas-chat" class="atlas-chat">
+    <div class="atlas-chat-header">
+        <img src="../images/atlas/atlas-avatar.png" alt="Atlas" class="atlas-chat-avatar">
+        <div class="atlas-chat-title">
+            <h3>Atlas the Bear</h3>
+            <p>Cal Strong Helper 🐻</p>
+        </div>
+        <button class="atlas-close-btn" aria-label="Close chat">&times;</button>
+    </div>
+    
+    <div class="atlas-chat-messages">
+        <!-- Messages will be added dynamically -->
+    </div>
+    
+    <div class="atlas-chat-input">
+        <input type="text" placeholder="Ask me anything..." aria-label="Chat message">
+        <button class="atlas-send-btn" aria-label="Send message">➤</button>
+    </div>
+</div>
+
+<link rel="stylesheet" href="../css/atlas-chatbot.css">
+<script src="../js/atlas-chatbot.js"></script>
+
+
+</body>
+</html>
